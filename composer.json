@@ -1,5 +1,5 @@
 {
-    "name": "habuio/task-scheduler-bundle",
+    "name": "habu/task-scheduler-bundle",
     "type": "symfony-bundle",
     "require": {
         "php": "^7.0",
