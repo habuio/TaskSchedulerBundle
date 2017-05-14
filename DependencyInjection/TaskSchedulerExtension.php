@@ -16,7 +16,6 @@ class TaskSchedulerExtension extends Extension
             new FileLocator(__DIR__.'/../Resources/config/')
         );
 
-        // Always load the services that will always be the same
         $loader->load('services.yml');
     }
 }

@@ -7,8 +7,16 @@ use Habu\TaskSchedulerBundle\Interfaces\ReferenceInterface;
 
 class SchedulerService
 {
+    /**
+     * @var ContainerInterface
+     */
     private $producerLocator;
 
+    /**
+     * SchedulerService constructor.
+     *
+     * @param ContainerInterface $producerLocator
+     */
     public function __construct(ContainerInterface $producerLocator)
     {
         $this->producerLocator = $producerLocator;

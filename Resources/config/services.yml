@@ -14,6 +14,13 @@ services:
         arguments: ['@task_scheduler.worker']
         tags: ['task_scheduler.producer']
 
+    # Transient task producer, this producer does exactly
+    # nothing, and is useful for when the code that calls the
+    # task, does not actually need the result.
+    task_scheduler.producer.none:
+        class: Habu\TaskSchedulerBundle\Producer\NoneProducer
+        tags: ['task_scheduler.producer']
+
     # Worker class responsible for actually executed
     # the deferred tasks.
     task_scheduler.worker:
