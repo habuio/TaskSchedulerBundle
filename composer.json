@@ -10,6 +10,14 @@
     "autoload": {
         "psr-4": {
             "Habu\\TaskSchedulerBundle\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Habu\\TaskSchedulerBundle\\Tests": "Tests/"
         }
     },
     "license": "BSD 3-clause",

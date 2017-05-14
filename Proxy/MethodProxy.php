@@ -3,14 +3,11 @@
 namespace Habu\TaskSchedulerBundle\Proxy;
 
 use Habu\TaskSchedulerBundle\Interfaces\ReferenceInterface;
-use Habu\TaskSchedulerBundle\Service\SchedulerService;
+use Habu\TaskSchedulerBundle\Traits\SchedulerServiceAwareTrait;
 
 class MethodProxy
 {
-    /**
-     * @var SchedulerService
-     */
-    private $schedulerService;
+    use SchedulerServiceAwareTrait;
 
     /**
      * @var string
@@ -27,13 +24,11 @@ class MethodProxy
      * the original parameters to the scheduler responsible for scheduling
      * execution of the task.
      *
-     * @param SchedulerService $schedulerService
      * @param string $cls
      * @param string $method
      */
-    public function __construct(SchedulerService $schedulerService, $cls, $method)
+    public function __construct($cls, $method)
     {
-        $this->schedulerService = $schedulerService;
         $this->cls = $cls;
         $this->method = $method;
     }
@@ -46,7 +41,7 @@ class MethodProxy
      */
     public function delay(...$args): ReferenceInterface
     {
-        return $this->schedulerService->schedule($this->cls, $this->method, $args, new \DateTime());
+        return $this->getSchedulerService()->schedule($this->cls, $this->method, $args, new \DateTime());
     }
 
     /**
@@ -59,6 +54,6 @@ class MethodProxy
      */
     public function schedule(\DateTime $dateTime, ...$args): ReferenceInterface
     {
-        return $this->schedulerService->schedule($this->cls, $this->method, $args, $dateTime);
+        return $this->getSchedulerService()->schedule($this->cls, $this->method, $args, $dateTime);
     }
 }

@@ -3,6 +3,7 @@
 namespace Habu\TaskSchedulerBundle\Producer;
 
 use Habu\TaskSchedulerBundle\Interfaces\ProducerInterface;
+use Habu\TaskSchedulerBundle\Interfaces\ReferenceInterface;
 use Habu\TaskSchedulerBundle\Reference\TransientReference;
 
 class NoneProducer implements ProducerInterface
@@ -18,9 +19,9 @@ class NoneProducer implements ProducerInterface
      * @param string $cls
      * @param string $method
      * @param array $args
-     * @return TransientReference
+     * @return ReferenceInterface
      */
-    public function produce($cls, $method, $args)
+    public function produce($cls, $method, $args): ReferenceInterface
     {
         return new TransientReference(null);
     }

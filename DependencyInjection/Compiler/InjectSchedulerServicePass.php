@@ -10,7 +10,7 @@ class InjectSchedulerServicePass implements CompilerPassInterface
 {
     /**
      * Compiler pass to abstract away the need to manually define the
-     * argument '@task_scheduler.scherduler_service' for each task's
+     * argument '@task_scheduler.scheduler_service' for each task's
      * constructor, and instead be able to just append a service tag.
      *
      * @param ContainerBuilder $container

@@ -23,6 +23,9 @@ trait MethodProxyTrait
             throw new \Exception(sprintf('Cannot install method proxy on non-existent method \'%s\'.', $name));
         }
 
-        return new MethodProxy($this->getSchedulerService(), get_class($this), $name);
+        $proxy = new MethodProxy(get_class($this), $name);
+        $proxy->setSchedulerService($this->getSchedulerService());
+
+        return $proxy;
     }
 }
