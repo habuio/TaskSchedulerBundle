@@ -6,7 +6,7 @@ use Habu\TaskSchedulerBundle\Proxy\MethodProxy;
 use Habu\TaskSchedulerBundle\Reference;
 use Habu\TaskSchedulerBundle\Service\SchedulerService;
 
-trait SchedulerAwareTrait
+trait SchedulerServiceAwareTrait
 {
     /**
      * @var SchedulerService

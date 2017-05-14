@@ -7,13 +7,13 @@ use Habu\TaskSchedulerBundle\Service\SchedulerService;
 
 class MethodProxy
 {
-    private $scheduler;
+    private $schedulerService;
     private $cls;
     private $method;
 
-    public function __construct(SchedulerService $scheduler, $cls, $method)
+    public function __construct(SchedulerService $schedulerService, $cls, $method)
     {
-        $this->scheduler = $scheduler;
+        $this->schedulerService = $schedulerService;
         $this->cls = $cls;
         $this->method = $method;
     }
@@ -24,7 +24,7 @@ class MethodProxy
      */
     public function delay(...$args): ReferenceInterface
     {
-        return $this->scheduler->schedule($this->cls, $this->method, $args, new \DateTime());
+        return $this->schedulerService->schedule($this->cls, $this->method, $args, new \DateTime());
     }
 
     /**
@@ -34,6 +34,6 @@ class MethodProxy
      */
     public function schedule(\DateTime $dateTime, ...$args): ReferenceInterface
     {
-        return $this->scheduler->schedule($this->cls, $this->method, $args, $dateTime);
+        return $this->schedulerService->schedule($this->cls, $this->method, $args, $dateTime);
     }
 }
