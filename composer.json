@@ -1,0 +1,21 @@
+{
+    "name": "habuio/task-scheduler-bundle",
+    "type": "symfony-bundle",
+    "require": {
+        "php": "^7.0",
+        "symfony/framework-bundle": "^3.3.0-BETA1"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Habu\\TaskSchedulerBundle\\": ""
+        }
+    },
+    "license": "BSD 3-clause",
+    "authors": [
+        {
+            "name": "Ruben Knol",
+            "email": "c.minor6@gmail.com"
+        }
+    ]
+}
