@@ -2,7 +2,7 @@ services:
     # Scheduler service, that's responsible for scheduling
     # task execution on the configured task producer.
     task_scheduler.scheduler_service:
-        class: TaskSchedulerBundle\Service\SchedulerService
+        class: Habu\TaskSchedulerBundle\Service\SchedulerService
         arguments: ['@task_scheduler.producer_locator']
 
     # Transient task producer, this producer is configured by
@@ -10,14 +10,14 @@ services:
     # request, but otherwise function exactly as a deferred
     # task worker producer.
     task_scheduler.producer.transient:
-        class: TaskSchedulerBundle\Producer\TransientProducer
+        class: Habu\TaskSchedulerBundle\Producer\TransientProducer
         arguments: ['@task_scheduler.worker']
         tags: ['task_scheduler.producer']
 
     # Worker class responsible for actually executed
     # the deferred tasks.
     task_scheduler.worker:
-        class: TaskSchedulerBundle\Worker\Worker
+        class: Habu\TaskSchedulerBundle\Worker\Worker
         arguments: ['@task_scheduler.task_locator']
 
     # Service locator for tasks. Tasks automatically get
