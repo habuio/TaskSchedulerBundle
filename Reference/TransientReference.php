@@ -2,7 +2,7 @@
 
 namespace Habu\TaskSchedulerBundle\Reference;
 
-use TaskSchedulerBundle\Interfaces\ReferenceInterface;
+use Habu\TaskSchedulerBundle\Interfaces\ReferenceInterface;
 
 class TransientReference implements ReferenceInterface
 {

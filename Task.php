@@ -2,8 +2,8 @@
 
 namespace Habu\TaskSchedulerBundle;
 
-use TaskSchedulerBundle\Interfaces\SchedulableInterface;
-use TaskSchedulerBundle\Traits\SchedulerAwareTrait;
+use Habu\TaskSchedulerBundle\Interfaces\SchedulableInterface;
+use Habu\TaskSchedulerBundle\Traits\SchedulerAwareTrait;
 
 abstract class Task implements SchedulableInterface
 {

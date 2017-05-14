@@ -2,7 +2,7 @@
 
 namespace Habu\TaskSchedulerBundle\Interfaces;
 
-use TaskSchedulerBundle\Service\SchedulerService;
+use Habu\TaskSchedulerBundle\Service\SchedulerService;
 
 interface SchedulableInterface
 {

@@ -41,7 +41,7 @@ Create a new file, for example `Task/MathTask.php`:
 
 namespace AppBundle\Task;
 
-use TaskSchedulerBundle\Task;
+use Habu\TaskSchedulerBundle\Task;
 
 class MathTask extends Task
 {

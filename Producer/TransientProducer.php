@@ -2,9 +2,9 @@
 
 namespace Habu\TaskSchedulerBundle\Producer;
 
-use TaskSchedulerBundle\Interfaces\ProducerInterface;
-use TaskSchedulerBundle\Reference\TransientReference;
-use TaskSchedulerBundle\Worker\Worker;
+use Habu\TaskSchedulerBundle\Interfaces\ProducerInterface;
+use Habu\TaskSchedulerBundle\Reference\TransientReference;
+use Habu\TaskSchedulerBundle\Worker\Worker;
 
 class TransientProducer implements ProducerInterface
 {

@@ -2,8 +2,8 @@
 
 namespace Habu\TaskSchedulerBundle\Proxy;
 
-use TaskSchedulerBundle\Interfaces\ReferenceInterface;
-use TaskSchedulerBundle\Service\SchedulerService;
+use Habu\TaskSchedulerBundle\Interfaces\ReferenceInterface;
+use Habu\TaskSchedulerBundle\Service\SchedulerService;
 
 class MethodProxy
 {

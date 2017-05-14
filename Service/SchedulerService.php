@@ -3,7 +3,7 @@
 namespace Habu\TaskSchedulerBundle\Service;
 
 use Psr\Container\ContainerInterface;
-use TaskSchedulerBundle\Interfaces\ReferenceInterface;
+use Habu\TaskSchedulerBundle\Interfaces\ReferenceInterface;
 
 class SchedulerService
 {

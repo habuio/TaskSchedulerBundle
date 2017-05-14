@@ -4,9 +4,9 @@ namespace Habu\TaskSchedulerBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use TaskSchedulerBundle\DependencyInjection\Compiler\InjectSchedulerServicePass;
-use TaskSchedulerBundle\DependencyInjection\Compiler\ProducerServiceLocatorPass;
-use TaskSchedulerBundle\DependencyInjection\Compiler\TaskServiceLocatorPass;
+use Habu\TaskSchedulerBundle\DependencyInjection\Compiler\InjectSchedulerServicePass;
+use Habu\TaskSchedulerBundle\DependencyInjection\Compiler\ProducerServiceLocatorPass;
+use Habu\TaskSchedulerBundle\DependencyInjection\Compiler\TaskServiceLocatorPass;
 
 class TaskSchedulerBundle extends Bundle
 {

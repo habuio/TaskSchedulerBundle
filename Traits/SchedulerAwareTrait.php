@@ -2,9 +2,9 @@
 
 namespace Habu\TaskSchedulerBundle\Traits;
 
-use TaskSchedulerBundle\Proxy\MethodProxy;
-use TaskSchedulerBundle\Reference;
-use TaskSchedulerBundle\Service\SchedulerService;
+use Habu\TaskSchedulerBundle\Proxy\MethodProxy;
+use Habu\TaskSchedulerBundle\Reference;
+use Habu\TaskSchedulerBundle\Service\SchedulerService;
 
 trait SchedulerAwareTrait
 {
