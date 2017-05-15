@@ -34,7 +34,8 @@ class TransientProducer implements ProducerInterface
     /**
      * @param string $cls
      * @param string $method
-     * @param array $args
+     * @param array  $args
+     *
      * @return ReferenceInterface
      */
     public function produce($cls, $method, $args): ReferenceInterface

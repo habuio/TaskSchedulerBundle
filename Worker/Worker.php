@@ -27,8 +27,10 @@ class Worker
      *
      * @param string $cls
      * @param string $method
-     * @param array $args
+     * @param array  $args
+     *
      * @return mixed
+     *
      * @throws \Exception
      */
     public function run($cls, $method, $args)

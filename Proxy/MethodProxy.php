@@ -37,11 +37,14 @@ class MethodProxy
      * Defer execution of this task to the background.
      *
      * @param array ...$args
+     *
      * @return ReferenceInterface
      */
     public function delay(...$args): ReferenceInterface
     {
-        return $this->getSchedulerService()->schedule($this->cls, $this->method, $args, new \DateTime());
+        return $this
+            ->getSchedulerService()
+            ->schedule($this->cls, $this->method, $args, new \DateTime());
     }
 
     /**
@@ -49,11 +52,14 @@ class MethodProxy
      * at a very specific point in time.
      *
      * @param \DateTime $dateTime
-     * @param array ...$args
+     * @param array     ...$args
+     *
      * @return ReferenceInterface
      */
     public function schedule(\DateTime $dateTime, ...$args): ReferenceInterface
     {
-        return $this->getSchedulerService()->schedule($this->cls, $this->method, $args, $dateTime);
+        return $this
+            ->getSchedulerService()
+            ->schedule($this->cls, $this->method, $args, $dateTime);
     }
 }

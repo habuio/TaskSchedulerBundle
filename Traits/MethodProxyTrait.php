@@ -14,7 +14,9 @@ trait MethodProxyTrait
      * be executed.
      *
      * @param string $name
+     *
      * @return MethodProxy
+     *
      * @throws \Exception
      */
     public function __get($name): MethodProxy

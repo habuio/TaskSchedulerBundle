@@ -17,7 +17,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Habu\\TaskSchedulerBundle\\Tests": "Tests/"
+            "Habu\\TaskSchedulerBundle\\Tests\\": "Tests/"
         }
     },
     "license": "BSD 3-clause",
@@ -28,6 +28,7 @@
         }
     ],
     "require-dev": {
-        "phpunit/phpunit": "^6.0"
+        "phpunit/phpunit": "^6.0",
+        "friendsofphp/php-cs-fixer": "^2.3"
     }
 }

@@ -16,8 +16,6 @@ interface ReferenceInterface
      * Calling this method blocks execution of application
      * flow until the execution of associated deferred task
      * has been completed, and a result is available.
-     *
-     * @return void
      */
     public function wait();
 }
