@@ -1,6 +1,6 @@
 # TaskSchedulerBundle
 
-PHP task scheduler/deferred task execution bundle for Symfony 3.3+
+PHP task scheduler/deferred task execution bundle for Symfony 3.3+ and PHP 7.0+
 
 ## Installation
 
@@ -17,24 +17,32 @@ $ composer require habuio/task-scheduler-bundle
 Open your `app/AppKernel.php` and add it:
 
 ```
+// [...]
+
     public function registerBundles()
     {
         $bundles = [
-            [...]
+            /// [...]
             new Habu\TaskSchedulerBundle\TaskSchedulerBundle(),
         ];
 
-        [...]
+        /// [...]
 
         return $bundles;
     }
+    
+// [...]
 ```
 
 ## Usage
 
 ### Create task service class
 
-Create a new file, for example `Task/MathTask.php`:
+Implementation wise, the bundle is designed to be completely transparent in the way you write your code.
+
+Each task service looks like any other Symfony service you'd write, and you can call the methods on it like you can on any other.
+
+Create a new file, for example `AppBundle/Task/MathTask.php`:
 
 ```
 <?php
@@ -68,9 +76,9 @@ Note the `task_scheduler.task` service tag - this enables the service to be exec
 
 ### Produce a task
 
-Now that we have everything set up, let's delay execution of a task to a deferred task worker.
+Now that we have everything set up, let's delay execution of a task to a background worker.
 
-Why don't we do it in a Controller (`Controller/DefaultController.php):
+Why don't we do it in a Controller (`Controller/DefaultController.php`):
 
 ```
 <?php
@@ -99,6 +107,10 @@ class DefaultController extends Controller
     }
 }
 ```
+
+As you can see, our task service has this magic method `delay` on top of our pre-existing service methods, that we called to defer execution to a background worker.
+
+
 
 ### Run the background worker job
 
