@@ -32,13 +32,14 @@ class TransientProducer implements ProducerInterface
     }
 
     /**
-     * @param string $cls
-     * @param string $method
-     * @param array  $args
+     * @param string    $cls
+     * @param string    $method
+     * @param array     $args
+     * @param \DateTime $when
      *
      * @return ReferenceInterface
      */
-    public function produce($cls, $method, $args): ReferenceInterface
+    public function produce($cls, $method, $args, \DateTime $when): ReferenceInterface
     {
         return new TransientReference($this->worker->run($cls, $method, $args));
     }

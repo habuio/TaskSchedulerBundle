@@ -16,13 +16,14 @@ class NoneProducer implements ProducerInterface
      * background worker to be running, in situations where you don't
      * actually need to do anything with the result.
      *
-     * @param string $cls
-     * @param string $method
-     * @param array  $args
+     * @param string    $cls
+     * @param string    $method
+     * @param array     $args
+     * @param \DateTime $when
      *
      * @return ReferenceInterface
      */
-    public function produce($cls, $method, $args): ReferenceInterface
+    public function produce($cls, $method, $args, \DateTime $when): ReferenceInterface
     {
         return new TransientReference(null);
     }

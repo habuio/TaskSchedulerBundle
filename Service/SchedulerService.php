@@ -25,10 +25,10 @@ class SchedulerService
     /**
      * @TODO - Replace static call to transient producer with real logic from configuration
      */
-    public function schedule($cls, $method, $args, \DateTime $dateTime): ReferenceInterface
+    public function schedule($cls, $method, $args, \DateTime $when): ReferenceInterface
     {
         $producer = $this->producerLocator->get('transient');
 
-        return $producer->produce($cls, $method, $args);
+        return $producer->produce($cls, $method, $args, $when);
     }
 }
