@@ -1,5 +1,7 @@
 # TaskSchedulerBundle
 
+[![Build Status](https://scrutinizer-ci.com/g/habuio/TaskSchedulerBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/habuio/TaskSchedulerBundle/build-status/master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/habuio/TaskSchedulerBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/habuio/TaskSchedulerBundle/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/habuio/TaskSchedulerBundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/habuio/TaskSchedulerBundle/?branch=master) [![Latest Stable Version](https://poser.pugx.org/habu/task-scheduler-bundle/v/stable)](https://packagist.org/packages/habu/task-scheduler-bundle) [![Latest Unstable Version](https://poser.pugx.org/habu/task-scheduler-bundle/v/unstable)](https://packagist.org/packages/habu/task-scheduler-bundle) [![License](https://poser.pugx.org/habu/task-scheduler-bundle/license)](https://packagist.org/packages/habu/task-scheduler-bundle) 
+
 PHP task scheduler/deferred task execution bundle for Symfony 3.3+ and PHP 7.0+
 
 ## Installation
