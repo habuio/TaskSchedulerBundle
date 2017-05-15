@@ -110,6 +110,31 @@ class DefaultController extends Controller
 
 As you can see, our task service has this magic method `delay` on top of our pre-existing service methods, that we called to defer execution to a background worker.
 
+Calling methods such as `delay` and `schedule` will return you with a `ReferenceInterface` object:
+
+```
+interface ReferenceInterface
+{
+    /**
+     * Wait for, and return the result of deferred executed
+     * task method.
+     *
+     * @return mixed
+     */
+    public function get();
+
+    /**
+     * Calling this method blocks execution of application
+     * flow until the execution of associated deferred task
+     * has been completed, and a result is available.
+     *
+     * @return void
+     */
+    public function wait();
+}
+```
+
+Depending on the producer implementation and bundle configuration, you may use these objects to access the result of background-executed tasks.
 
 
 ### Run the background worker job
