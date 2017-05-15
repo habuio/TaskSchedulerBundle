@@ -17,7 +17,7 @@ class NoneProducerTest extends TestCase
 
     public function testGetNone()
     {
-        $ref = $this->producer->produce(self::class, 'bla', []);
+        $ref = $this->producer->produce(self::class, 'bla', [], new \DateTime());
 
         $this->assertInstanceOf(ReferenceInterface::class, $ref);
         $this->assertEquals(null, $ref->get());
