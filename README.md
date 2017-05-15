@@ -100,6 +100,9 @@ class DefaultController extends Controller
 
         // Defer execution of the task to a background worker.
         $ref = $task->add->delay(2, 2);
+        
+        // Schedule a task to be executed at a specific moment in time
+        $task->add->schedule(new \DateTime('2018-01-01 00:00:00'), 5, 5);
 
         // Halt execution of the application until the worker
         // finishes processing the task and yields the result.
@@ -108,7 +111,8 @@ class DefaultController extends Controller
 }
 ```
 
-As you can see, our task service has this magic method `delay` on top of our pre-existing service methods, that we called to defer execution to a background worker.
+As you can see, our task service has this magic method `delay` on top of our pre-existing service methods, that we called to defer execution to a background worker, 
+as well as `schedule`, which allows task execution to be deferred until a specific moment in time. 
 
 Calling methods such as `delay` and `schedule` will return you with a `ReferenceInterface` object:
 
