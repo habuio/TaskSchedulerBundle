@@ -1,49 +1,31 @@
 services:
-    # Automatically tag all services that are an instance
-    # of our Task abstract class.
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
     _instanceof:
-        Habu\TaskSchedulerBundle\Task:
+        Habu\TaskSchedulerBundle\Interfaces\ProducerInterface:
+            tags: ['task_scheduler.producer']
+
+        Habu\TaskSchedulerBundle\Interfaces\TaskInterface:
             tags: ['task_scheduler.task']
             public: true
 
-    # Scheduler service, that's responsible for scheduling
-    # task execution on the configured task producer.
-    task_scheduler.scheduler_service:
-        class: Habu\TaskSchedulerBundle\Service\SchedulerService
-        arguments: ['@task_scheduler.producer_locator']
+    # Unnamed services that should get autowired
+    Habu\TaskSchedulerBundle\Service\SchedulerService: ['@task_scheduler.producer_locator']
+    Habu\TaskSchedulerBundle\Worker\Worker: ['@task_scheduler.task_locator']
 
-    # Transient task producer, this producer is configured by
-    # default and will execute the task within the same
-    # request, but otherwise function exactly as a deferred
-    # task worker producer.
+    # Included default task producers
     task_scheduler.producer.transient:
         class: Habu\TaskSchedulerBundle\Producer\TransientProducer
-        arguments: ['@task_scheduler.worker']
-        tags: ['task_scheduler.producer']
 
-    # Transient task producer, this producer does exactly
-    # nothing, and is useful for when the code that calls the
-    # task, does not actually need the result.
     task_scheduler.producer.none:
         class: Habu\TaskSchedulerBundle\Producer\NoneProducer
-        tags: ['task_scheduler.producer']
 
-    # Worker class responsible for actually executed
-    # the deferred tasks.
-    task_scheduler.worker:
-        class: Habu\TaskSchedulerBundle\Worker\Worker
-        arguments: ['@task_scheduler.task_locator']
-
-    # Service locator for tasks. Tasks automatically get
-    # stored in this locator if they have the service
-    # tag 'task_scheduler.task' appended.
+    # Service locator services, used to isolate tagged
+    # services of that kind
     task_scheduler.task_locator:
         class: Symfony\Component\DependencyInjection\ServiceLocator
-        tags: ['container.service_locator']
 
-    # Service locator for producers. Producers automatically
-    # get stored in this locator if they have the service
-    # tag 'task_scheduler.producer' appended.
     task_scheduler.producer_locator:
         class: Symfony\Component\DependencyInjection\ServiceLocator
-        tags: ['container.service_locator']
