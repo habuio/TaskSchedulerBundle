@@ -3,7 +3,8 @@ services:
     # of our Task abstract class.
     _instanceof:
         Habu\TaskSchedulerBundle\Task:
-            - tags: ['task_scheduler.task']
+            tags: ['task_scheduler.task']
+            public: true
 
     # Scheduler service, that's responsible for scheduling
     # task execution on the configured task producer.
