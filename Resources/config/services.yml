@@ -1,4 +1,10 @@
 services:
+    # Automatically tag all services that are an instance
+    # of our Task abstract class.
+    _instanceof:
+        Habu\TaskSchedulerBundle\Task:
+            - tags: ['task_scheduler.task']
+
     # Scheduler service, that's responsible for scheduling
     # task execution on the configured task producer.
     task_scheduler.scheduler_service:
