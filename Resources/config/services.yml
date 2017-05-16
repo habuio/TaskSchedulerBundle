@@ -7,10 +7,6 @@ services:
         Habu\TaskSchedulerBundle\Interfaces\ProducerInterface:
             tags: ['task_scheduler.producer']
 
-        Habu\TaskSchedulerBundle\Interfaces\TaskInterface:
-            tags: ['task_scheduler.task']
-            public: true
-
     # Unnamed services that should get autowired
     Habu\TaskSchedulerBundle\Service\SchedulerService: ['@task_scheduler.producer_locator']
     Habu\TaskSchedulerBundle\Worker\Worker: ['@task_scheduler.task_locator']

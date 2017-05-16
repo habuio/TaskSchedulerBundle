@@ -13,6 +13,5 @@ use Habu\TaskSchedulerBundle\Traits\SchedulerServiceAwareTrait;
  */
 abstract class Task implements SchedulableInterface, TaskInterface
 {
-    use SchedulerServiceAwareTrait;
     use MethodProxyTrait;
 }
